@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+    <h1>Animals availabe for adoptions</h1>
+    {% for pet in pets %}
+        <li>
+            <a href="{% url 'pet_detail' pet.id %}">
+                {{ pet.name|capfirst }}
+            </a>
+        </li>
+    {% endfor %}
+{% endblock %}
